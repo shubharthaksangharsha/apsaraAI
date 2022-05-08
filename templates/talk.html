@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="alert alert-primary" role="alert">
+  User: {{take_command}}
+</div>
+<div class="alert alert-secondary" role="alert">
+  Apsara: {{apsara_command}}
+</div>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	Command List
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Apsara Commands </strong><br>[NOTE- text with bold: <b>info</b>, text with unbold: commands]<p><b>1. Check Time: </b> the time <br> <b>2. Check Date: </b> 
+          date <br>
+	  <b>3. Open College Site: </b> open college site <br>
+	  <b>4. Open Leetcode: </b> open leetcode <br>
+	  <b>5. Open Youtube: </b> open youtube <br>
+	  <b>6. Open Google: </b> open google <br>
+	  <b>7. Check Battery : </b> battery <br>
+    <b>Play specific song on spotify, device one = "laptop", device two = "smartphone", device3="spotifyweb" </b> <br>
+    <b>8. Open Spotify on Laptop: </b> open spotify<br>
+    <b>9.Set current spotify devices with Apsara: </b> set spotify<br>
+    <b>10. Open Web Spotify: </b> open spotify web<br>
+    <b>11. Play specific song on device 1 : </b> play <b> song name </b> on device one<br>
+    <b>12. Play specific song on device 2 : </b> play <b> song name </b> on device two<br>
+    <b>13. Play specific song on device 3 : </b> play <b> song name </b> on device three<br>
+    <b>14. Pause music on spotify devices: [Note: only pause does not resume]</b> pause music<br>
+    <b>15. Play any song or video on youtube: [More realiable]</b> play <b>song/video name</b> on youtube<br>
+    <b>16. Pause music/video on youtube: </b> pause<br>
+    <b>17. Stop music/video on youtube [Note: recommended to stop music/video if you have used 3-4 times]: </b> stop <br>
+    <b>18. Mute volume: </b> mute<br>
+    <b>19. Increase the volume by number percent: </b> increase <b>number</b><br>
+    <b>20. Decerease the volume by number percent: </b> decrease <b>number</b><br>
+    <b>21. Search Wikipedia about any person : </b> wikipedia <b>name</b><br>
+    <b>22. Search Google about any query: </b> search <b>query</b><br>
+    <b>23. Play music from of your favourite album:  </b> play my music<br>
+    <b>24. Ring your phone : </b> ring<br>
+    <b>25. play friends of your favourite episode and season: [NOTE: Under Maintainence]</b> play friends<br>
+    <b>26. Check College Attendance: </b>get attendance <br>
+    <b>27. Tell a joke : </b> say joke<br>
+    <b>28. Introduce herself: </b> hi apsara or hey apsara or what is your name<br>
+    <b>29. Send Mail to anyone: [Note: Under Maintainence]</b> send mail<br>
+    <b>30. Check weather of any state: [Note: Under Maintainence</b> what is the weather<br>
+    <b>31. Check weather of Shubharthak's State: </b> weather in my state<br>
+    <b>32. Check Result of previous semester : </b> check my result<br>
+    <b>33. Open current semester time table: </b> open time table<br>
+    <b>34. Check Gmail Last 2 Messages: </b> read mail<br>
+    <b>35. Open Oracle Server on Laptop's screen: </b> open cloud or open oracle<br>
+    <b>36. Open Netflix on Laptop's screen : </b> open netflix<br>
+    <b>37. Set Google Meeting with Bhaiya [Note: Under Maintainence]: </b> set meeting with bro<br>
+    <b>38. Set Google Meeting with Bhabhi [Note: Under Maintainence] : </b> set meeting with bhabhi<br>
+    <b>39. Say I love you to Shubharthak: </b> i love you <br>
+    <b>40. Tell today day: </b> day today<br>
+    <b>41. Tell today news [Note Under Maintainence] : </b> news<br>
+    <b>42. Set alarm for x number of minutes: </b> x minutes<br>
+    <b>43. Connect with the Bluetooth Speaker: </b> connect<br>
+    <b>44. Disconnect with the Bluetooth Speaker: </b> disconnect<br>    
+    <b>45. Copies the current chat and play on laptop: </b> copy <b>chat</b><br>
+	</p>
+	
+      </div>
+    </div>
+  </div>
+
+
+<div class="container my-3">
+  <form action="/talk" method='POST' enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="command" class="form-label"><b>Record your voice and send to Apsara...</b></label><br>
+        <label for="command" class="form-label"><b>Recording Only Available for Android/IOS, for Desktop: Upload your wav</b></label>
+        
+        <br>
+        <input type="file" name="file" accept="audio/*" capture id="recorder" />
+        <br> <br>
+  <audio id="player" controls></audio>
+  <script>
+    const recorder = document.getElementById('recorder');
+    const player = document.getElementById('player');
+
+    recorder.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      const url = URL.createObjectURL(file);
+      // Do something with the audio file.
+      player.src = url;
+    });
+  </script>
+</audio>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock body %}
+
+    

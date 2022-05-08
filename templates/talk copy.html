@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3">
+  <form action="/talk" method='POST' enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="command" class="form-label">Record your voice and send to Apsara...</label>
+        <br>
+        <input type="file" name="file"/>
+        
+        
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock body %}
+
+    

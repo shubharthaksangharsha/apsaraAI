@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="bd-example" align="middle">
+  <img src="/static/mypic.jpeg" alt="Mypic" class="img-fluid" style="max-width:50%;">
+<p><b>Hi, I am Shubharthak, Developer of Apsara.</b><br> 
+</p>
+<a href="https://github.com/shubharthaksangharsha" type="button" target="_blank" > <button type="button" class="btn btn-outline-dark">My Github</button></a>
+<a href="https://stackoverflow.com/users/14835045/shubharthak" type="button" target="_blank" > <button type="button" class="btn btn-outline-secondary">My Stackoverflow</button></a>
+<a href="https://www.linkedin.com/in/shubharthak-sangharsha-42b44360/" type="button" target="_blank" > <button type="button" class="btn btn-outline-primary">My Linkedin</button> </a><br>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Mail me your queries or suggestions</h1>
+    <br>
+    <form class="" action="/about" method="POST">
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label name="name" for="name">Name</label>
+            <input class="form-control" type="text" name="name" placeholder="Enter your name" required>
+          </div>
+        </div>
+ 
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label name="email" for="email">Email</label>
+            <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label name="message" for="message">Message</label>
+            <textarea class="form-control" name="message" rows="5" placeholder="Enter your message here . . . . " required></textarea>
+          </div>
+        </div>
+        
+        <div class="col-lg-12">
+          <button type="submit" class="btn btn-outline-dark">Send</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+{% endblock body %}
